@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     siteName: "Willawz",
     images: [
       {
-        url: "/og-image.png", // optional if you add one
+        url: "/og-image.png",
         width: 1200,
         height: 630,
         alt: "Will Lawson Portfolio Preview",
@@ -33,8 +33,8 @@ export const metadata: Metadata = {
     type: "website",
   },
   icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon.ico",
+    icon: "/favicon-v2.ico",
+    shortcut: "/favicon-v2.ico",
     apple: "/apple-touch-icon.png",
     other: [
       {
@@ -72,3 +72,4 @@ export default function RootLayout({
     </html>
   );
 }
+
