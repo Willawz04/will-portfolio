@@ -190,6 +190,20 @@ export default function Home() {
 </form>
   </motion.div>
 </section>
+{/* Footer */}
+<footer className="border-t border-neutral-800 text-neutral-500 text-sm text-center py-6 px-4 mt-12">
+  <div className="flex flex-col md:flex-row justify-center items-center gap-2">
+    <span>© {2025} Will Lawson</span>
+    <span className="hidden md:inline">✦</span>
+    <span>Built with Next.js + Tailwind</span>
+    <a
+      href="mailto:will.lawson.is@gmail.com"
+      className="text-blue-400 hover:underline ml-2"
+    >
+      Connect
+    </a>
+  </div>
+</footer>
 </div>
   )
 }
