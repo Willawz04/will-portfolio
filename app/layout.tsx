@@ -12,6 +12,23 @@ export const metadata: Metadata = {
   title: "Will Lawson | Business Portfolio",
   description:
     "Explore Will Lawson's professional work, projects, and contact details. Built with passion, styled with purpose.",
+  viewport: {
+    width: 'device-width',
+    initialScale: 1,
+    maximumScale: 1,
+  },
+  themeColor: '#000000',
+  manifest: '/site.webmanifest',
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+    ],
+    apple: [
+      { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
+    ],
+  },
   openGraph: {
     title: "Will Lawson | Business Portfolio",
     description:
@@ -27,29 +44,6 @@ export const metadata: Metadata = {
       },
     ],
     type: "website",
-  },
-  icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon.ico",
-    apple: "/apple-touch-icon.png",
-    other: [
-      {
-        rel: "icon",
-        url: "/favicon-32x32.png",
-        sizes: "32x32",
-        type: "image/png",
-      },
-      {
-        rel: "icon",
-        url: "/favicon-16x16.png",
-        sizes: "16x16",
-        type: "image/png",
-      },
-      {
-        rel: "manifest",
-        url: "/site.webmanifest",
-      },
-    ],
   },
 };
 
