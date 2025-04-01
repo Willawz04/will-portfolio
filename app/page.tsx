@@ -1,20 +1,22 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import Lanyard from '@/components/ui/lanyard';
+import Lanyard from '@/components/Components/Lanyard/Lanyard';
 
 export default function Home() {
   const [showBanner, setShowBanner] = useState(true);
+  const { scrollY } = useScroll();
+  const y = useTransform(scrollY, [0, 1000], [0, -800]);
 
   useEffect(() => {
     document.title = 'Will Lawson | Business Portfolio';
   }, []);
 
   return (
-    <div className="bg-neutral-950 text-neutral-100 min-h-screen font-sans">
+    <div className="bg-neutral-950 text-neutral-100 min-h-screen font-poppins">
       {/* ⚠️ Under Construction Banner */}
       {showBanner && (
         <div className="relative w-full overflow-hidden bg-yellow-400 text-black text-center py-2 font-bold text-sm uppercase border-b-4 border-black animate-pulse z-50">
@@ -37,9 +39,12 @@ export default function Home() {
 
       {/* Hero Section */}
       <section className="flex flex-col items-center justify-center text-center h-screen p-8 space-y-6 relative">
-        <div className="absolute top-8 right-8 z-10 w-96 h-96">
-          <Lanyard position={[0, 0, 5]} gravity={[0, -9.81, 0]} />
-        </div>
+        <motion.div
+          style={{ y }}
+          className="fixed top-0 right-0 w-[800px] h-[800px] pointer-events-auto"
+        >
+          <Lanyard position={[0, 0, 12]} gravity={[0, -9.81, 0]} />
+        </motion.div>
         <motion.h1
           initial={{ opacity: 0, y: -30 }}
           animate={{ opacity: 1, y: 0 }}
