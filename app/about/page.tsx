@@ -102,22 +102,6 @@ export default function About() {
               </div>
             </div>
           </motion.section>
-
-          {/* Education */}
-          <motion.section
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.8 }}
-          >
-            <h2 className="text-2xl font-semibold mb-6">Education</h2>
-            <div className="space-y-4">
-              <div className="bg-neutral-900 rounded-lg p-6">
-                <h3 className="text-xl font-semibold mb-2">Business Administration</h3>
-                <p className="text-neutral-400">University Name</p>
-                <p className="text-neutral-500">2015 - 2019</p>
-              </div>
-            </div>
-          </motion.section>
         </div>
       </main>
 
