@@ -8,100 +8,96 @@ export default function About() {
     <div className="bg-neutral-950 text-neutral-100 min-h-screen font-poppins">
       <Navbar />
       
-      <main className="pt-24 pb-16">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <main className="min-h-screen py-16 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto">
           {/* Hero Section */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="text-center mb-16"
-          >
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">About Me</h1>
-            <p className="text-xl text-neutral-400">
-              A dedicated business professional with expertise in accounting and property management
-            </p>
-          </motion.div>
-
-          {/* Bio Section */}
-          <motion.section
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="mb-16"
-          >
-            <h2 className="text-2xl font-semibold mb-6">Background</h2>
-            <div className="prose prose-invert max-w-none">
-              <p className="text-neutral-300 leading-relaxed">
-                I'm a business professional with a strong foundation in accounting and property management. 
-                My journey in business began with a focus on financial operations and has evolved to include 
-                comprehensive property management responsibilities.
+          <section className="mb-16">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="text-center"
+            >
+              <h1 className="text-5xl font-bold mb-6">
+                <span className="text-white">About </span>
+                <span className="bg-gradient-to-r from-accent-light to-accent-medium bg-clip-text text-transparent">
+                  Me
+                </span>
+              </h1>
+              <p className="text-xl text-accent-slate max-w-3xl mx-auto">
+                A dedicated business professional with expertise in accounting and property management
               </p>
-              <p className="text-neutral-300 leading-relaxed mt-4">
-                With experience in both accounting and property management, I specialize in financial analysis, 
-                client communication, and operational efficiency. I'm committed to delivering exceptional service 
-                and maintaining high standards in all business operations.
-              </p>
-            </div>
-          </motion.section>
+            </motion.div>
+          </section>
 
-          {/* Experience Timeline */}
-          <motion.section
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-            className="mb-16"
-          >
-            <h2 className="text-2xl font-semibold mb-6">Experience</h2>
-            <div className="space-y-8">
-              <div>
-                <h3 className="text-xl font-semibold mb-2">Experience</h3>
-                <div className="space-y-6">
-                  <div>
-                    <h4 className="font-medium">Assistant to Regional Manager</h4>
-                    <p className="text-neutral-400">DMS Property Group</p>
-                    <p className="text-sm text-neutral-500">2022 - 2023</p>
-                    <ul className="list-disc list-inside text-neutral-400 mt-2 space-y-1">
-                      <li>Managed property operations and tenant relations</li>
-                      <li>Handled financial reporting and documentation</li>
-                      <li>Coordinated maintenance and property improvements</li>
-                    </ul>
-                  </div>
-                  <div>
-                    <h4 className="font-medium">Summer Position</h4>
-                    <p className="text-neutral-400">Konstant Manufacturing</p>
-                    <p className="text-sm text-neutral-500">2024</p>
-                    <ul className="list-disc list-inside text-neutral-400 mt-2 space-y-1">
-                      <li>Gained valuable manufacturing industry experience</li>
-                      <li>Contributed to operational efficiency</li>
-                    </ul>
-                  </div>
-                  <div>
-                    <h4 className="font-medium">Junior Accountant</h4>
-                    <p className="text-neutral-400">LJS&Associates Consulting</p>
-                    <p className="text-sm text-neutral-500">2021 - 2022</p>
-                    <ul className="list-disc list-inside text-neutral-400 mt-2 space-y-1">
-                      <li>Managed client accounts and financial records</li>
-                      <li>Prepared financial statements and reports</li>
-                      <li>Assisted with tax preparation and compliance</li>
-                    </ul>
-                  </div>
+          {/* Experience Section */}
+          <section className="mb-16">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="bg-black/50 backdrop-blur-sm border border-accent-medium/20 rounded-lg p-8"
+            >
+              <h2 className="text-3xl font-bold mb-8 text-accent-lightest">Experience</h2>
+              <div className="space-y-8">
+                <div className="relative pl-8 border-l-2 border-accent-medium/30">
+                  <div className="absolute -left-[9px] top-0 w-4 h-4 bg-accent-medium rounded-full" />
+                  <h3 className="text-xl font-semibold text-accent-light">Assistant to Regional Manager</h3>
+                  <p className="text-accent-slate">DMS Property Group</p>
+                  <p className="text-sm text-accent-slate/70 mb-4">2022 - 2023</p>
+                  <ul className="list-disc list-inside text-white space-y-2">
+                    <li>Managed property operations and tenant relations</li>
+                    <li>Handled financial reporting and documentation</li>
+                    <li>Coordinated maintenance and property improvements</li>
+                  </ul>
+                </div>
+
+                <div className="relative pl-8 border-l-2 border-accent-medium/30">
+                  <div className="absolute -left-[9px] top-0 w-4 h-4 bg-accent-medium rounded-full" />
+                  <h3 className="text-xl font-semibold text-accent-light">Summer Position</h3>
+                  <p className="text-accent-slate">Konstant Manufacturing</p>
+                  <p className="text-sm text-accent-slate/70 mb-4">2024</p>
+                  <ul className="list-disc list-inside text-white space-y-2">
+                    <li>Gained valuable manufacturing industry experience</li>
+                    <li>Contributed to operational efficiency</li>
+                  </ul>
+                </div>
+
+                <div className="relative pl-8 border-l-2 border-accent-medium/30">
+                  <div className="absolute -left-[9px] top-0 w-4 h-4 bg-accent-medium rounded-full" />
+                  <h3 className="text-xl font-semibold text-accent-light">Junior Accountant</h3>
+                  <p className="text-accent-slate">LJS&Associates Consulting</p>
+                  <p className="text-sm text-accent-slate/70 mb-4">2021 - 2022</p>
+                  <ul className="list-disc list-inside text-white space-y-2">
+                    <li>Managed client accounts and financial records</li>
+                    <li>Prepared financial statements and reports</li>
+                    <li>Assisted with tax preparation and compliance</li>
+                  </ul>
                 </div>
               </div>
+            </motion.div>
+          </section>
 
-              <div>
-                <h3 className="text-xl font-semibold mb-2">Education</h3>
-                <div>
-                  <h4 className="font-medium">Business Degree</h4>
-                  <p className="text-neutral-400">Conestoga College</p>
-                  <p className="text-sm text-neutral-500">2023 - 2025</p>
-                  <p className="text-neutral-400 mt-2">
-                    Successfully completed Business Administration program while gaining practical experience through work placements.
-                  </p>
-                </div>
+          {/* Education Section */}
+          <section>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              className="bg-black/50 backdrop-blur-sm border border-accent-medium/20 rounded-lg p-8"
+            >
+              <h2 className="text-3xl font-bold mb-8 text-accent-lightest">Education</h2>
+              <div className="relative pl-8 border-l-2 border-accent-medium/30">
+                <div className="absolute -left-[9px] top-0 w-4 h-4 bg-accent-medium rounded-full" />
+                <h3 className="text-xl font-semibold text-accent-light">Business Degree</h3>
+                <p className="text-accent-slate">Conestoga College</p>
+                <p className="text-sm text-accent-slate/70 mb-4">2023 - 2025</p>
+                <p className="text-white">
+                  Successfully completing Business Administration program while gaining practical experience through work placements.
+                </p>
               </div>
-            </div>
-          </motion.section>
+            </motion.div>
+          </section>
         </div>
       </main>
 
