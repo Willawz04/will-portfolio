@@ -5,6 +5,8 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import Lanyard from '@/components/Components/Lanyard/Lanyard';
+import Navbar from '@/components/Components/Navbar/Navbar';
+import Skills from '@/components/Components/Skills/Skills';
 
 export default function Home() {
   const [showBanner, setShowBanner] = useState(true);
@@ -13,6 +15,8 @@ export default function Home() {
 
   return (
     <div className="bg-neutral-950 text-neutral-100 min-h-screen font-poppins">
+      <Navbar />
+      
       {/* ⚠️ Under Construction Banner */}
       {showBanner && (
         <div className="relative w-full overflow-hidden bg-yellow-400 text-black text-center py-2 font-bold text-sm uppercase border-b-4 border-black animate-pulse z-50">
@@ -72,6 +76,10 @@ export default function Home() {
           </Button>
         </motion.div>
       </section>
+
+      {/* Skills Section */}
+      <Skills />
+
       {/* My Work Section */}
       <section className="p-8">
         <h2 className="text-4xl font-semibold text-center mb-8">My Work</h2>
