@@ -26,6 +26,10 @@ import * as THREE from "three";
 
 extend({ MeshLineGeometry, MeshLineMaterial });
 
+// Update asset paths to use public directory
+const cardGLB = '/assets/lanyard/card.glb';
+const lanyardPNG = '/assets/lanyard/lanyard.png';
+
 interface LanyardProps {
   position?: [number, number, number];
   gravity?: [number, number, number];
@@ -114,8 +118,8 @@ function Band({ maxSpeed = 50, minSpeed = 0 }: BandProps) {
     linearDamping: 2,
   };
 
-  const { nodes, materials } = useGLTF("/assets/card.glb") as any;
-  const texture = useTexture("/assets/lanyard.png") as THREE.Texture;
+  const { nodes, materials } = useGLTF(cardGLB) as any;
+  const texture = useTexture(lanyardPNG) as THREE.Texture;
 
   useEffect(() => {
     if (texture) {
