@@ -118,7 +118,7 @@ function Band({ maxSpeed = 50, minSpeed = 0 }: BandProps) {
     linearDamping: 2,
   };
 
-  const { nodes, materials } = useGLTF(cardGLB) as any;
+  const { nodes, materials } = useGLTF(cardGLB, true) as any;
   const texture = useTexture(lanyardPNG) as THREE.Texture;
 
   useEffect(() => {

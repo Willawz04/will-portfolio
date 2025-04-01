@@ -5,8 +5,8 @@ const nextConfig = {
       test: /\.(glb|gltf)$/,
       type: 'asset/resource',
       generator: {
-        filename: 'static/chunks/[path][name][ext]'
-      }
+        filename: 'static/media/[name][ext]',
+      },
     });
     return config;
   },
@@ -23,15 +23,15 @@ const nextConfig = {
   async headers() {
     return [
       {
-        source: '/assets/:path*',
+        source: '/models/:path*',
         headers: [
-          {
-            key: 'Cache-Control',
-            value: 'public, max-age=31536000, immutable',
-          },
           {
             key: 'Content-Type',
             value: 'model/gltf-binary',
+          },
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
           },
         ],
       },
