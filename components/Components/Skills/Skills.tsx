@@ -64,24 +64,17 @@ export default function Skills() {
               <div className="space-y-6">
                 {category.items.map((skill, skillIndex) => (
                   <div key={skillIndex} className="space-y-2">
-                    <div className="flex justify-between items-center">
-                      <span className="text-white">{skill.name}</span>
-                      <span className="text-white/70">{skill.proficiency}%</span>
+                    <div className="flex justify-between mb-1">
+                      <span className="text-neutral-300">{skill.name}</span>
+                      <span className="text-neutral-400">{skill.proficiency}%</span>
                     </div>
-                    <div className="relative h-2">
-                      {/* Background bar */}
-                      <div className="absolute inset-0 bg-white/10 rounded-full" />
-                      {/* Animated progress bar */}
+                    <div className="w-full bg-neutral-800 rounded-full h-2 overflow-hidden">
                       <motion.div
                         initial={{ width: 0 }}
-                        animate={{ width: `${skill.proficiency}%` }}
-                        transition={{
-                          duration: 1.5,
-                          delay: categoryIndex * 0.2 + skillIndex * 0.1,
-                          ease: "easeOut"
-                        }}
-                        className="absolute inset-0 bg-gradient-to-r from-accent-medium to-accent-light rounded-full"
-                        style={{ width: `${skill.proficiency}%` }}
+                        whileInView={{ width: `${skill.proficiency}%` }}
+                        transition={{ duration: 1, delay: skillIndex * 0.1 }}
+                        viewport={{ once: true }}
+                        className="h-full bg-gradient-to-r from-accent-medium to-accent-light rounded-full"
                       />
                     </div>
                   </div>

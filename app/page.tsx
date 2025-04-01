@@ -7,7 +7,6 @@ import { Card, CardContent } from '@/components/ui/card';
 import Lanyard from '@/components/Components/Lanyard/Lanyard';
 import Navbar from '@/components/Components/Navbar/Navbar';
 import Skills from '@/components/Components/Skills/Skills';
-import Link from 'next/link';
 
 export default function Home() {
   const [showBanner, setShowBanner] = useState(true);
@@ -39,39 +38,43 @@ export default function Home() {
       )}
 
       {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-black via-black/95 to-accent-dark/20" />
-        <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+      <section className="flex flex-col items-center justify-center text-center h-screen p-8 space-y-6 relative">
+        <motion.div
+          style={{ y }}
+          className="fixed top-0 right-0 w-[800px] h-[800px] pointer-events-auto"
+        >
+          <Lanyard position={[0, 0, 12]} gravity={[0, -9.81, 0]} />
+        </motion.div>
+        <motion.h1
+          initial={{ opacity: 0, y: -30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.4, duration: 0.8 }}
+          className="text-4xl md:text-6xl font-bold tracking-wide text-neutral-300"
+        >
+          Will Lawson
+        </motion.h1>
+        <motion.h2
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1, duration: 0.6 }}
+          className="text-xl md:text-2xl font-medium text-neutral-500"
+        >
+          Business Portfolio
+        </motion.h2>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1.5, duration: 0.6 }}
+        >
+          <Button
+            asChild
+            className="bg-white text-black hover:bg-neutral-200 mt-4"
           >
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6">
-              <span className="text-white">Hi, I'm </span>
-              <span className="bg-gradient-to-r from-accent-light to-accent-medium bg-clip-text text-transparent">
-                Will
-              </span>
-            </h1>
-            <p className="text-xl sm:text-2xl text-accent-slate max-w-2xl mx-auto mb-8">
-              A business professional with expertise in accounting and property management
-            </p>
-            <div className="flex justify-center gap-4">
-              <Link 
-                href="/about"
-                className="px-8 py-3 rounded-full bg-gradient-to-r from-accent-medium to-accent-light text-white font-semibold hover:opacity-90 transition-opacity"
-              >
-                About Me
-              </Link>
-              <Link 
-                href="/contact"
-                className="px-8 py-3 rounded-full border border-accent-medium/30 text-accent-light hover:border-accent-medium/60 transition-colors"
-              >
-                Get in Touch
-              </Link>
-            </div>
-          </motion.div>
-        </div>
+            <a href="/resume.pdf" download>
+              Download Resume
+            </a>
+          </Button>
+        </motion.div>
       </section>
 
       {/* Skills Section */}
