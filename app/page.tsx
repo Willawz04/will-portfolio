@@ -11,10 +11,6 @@ export default function Home() {
   const { scrollY } = useScroll();
   const y = useTransform(scrollY, [0, 1000], [0, -800]);
 
-  useEffect(() => {
-    document.title = 'Will Lawson | Business Portfolio';
-  }, []);
-
   return (
     <div className="bg-neutral-950 text-neutral-100 min-h-screen font-poppins">
       {/* ⚠️ Under Construction Banner */}
