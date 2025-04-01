@@ -27,8 +27,8 @@ import * as THREE from "three";
 extend({ MeshLineGeometry, MeshLineMaterial });
 
 // Update asset paths to use public directory
-const cardGLB = '/assets/lanyard/card.glb';
-const lanyardPNG = '/assets/lanyard/lanyard.png';
+const cardGLB = '/3d/card.glb';
+const lanyardPNG = '/3d/lanyard.png';
 
 interface LanyardProps {
   position?: [number, number, number];
