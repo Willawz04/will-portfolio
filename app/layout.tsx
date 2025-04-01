@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
+import Navbar from "../components/Components/Navbar/Navbar";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -42,17 +43,20 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: {
+  children: React.ReactNode
+}) {
   return (
     <html lang="en">
       <head>
         <link rel="icon" href="/favicon-v2.ico" />
         <link rel="shortcut icon" href="/favicon-v2.ico" />
       </head>
-      <body className={`${poppins.variable} antialiased`}>
-        {children}
+      <body className={`${poppins.variable} antialiased min-h-screen bg-gradient-to-br from-accent-lightest via-accent-light to-accent-medium transition-colors duration-500 ease-in-out`}>
+        <div className="min-h-screen bg-black/90 text-white">
+          <Navbar />
+          {children}
+        </div>
       </body>
     </html>
   );

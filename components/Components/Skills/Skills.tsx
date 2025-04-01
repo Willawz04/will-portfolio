@@ -52,42 +52,32 @@ export default function Skills() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {skills.map((category, categoryIndex) => (
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {skills.map((category, index) => (
             <motion.div
-              key={category.category}
+              key={index}
               initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: categoryIndex * 0.1 }}
-              viewport={{ once: true }}
-              className="bg-neutral-900 rounded-xl p-6 border border-neutral-800"
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.2 }}
+              className="bg-black/50 backdrop-blur-sm border border-accent-medium/20 rounded-lg p-6 hover:border-accent-medium/40 transition-colors"
             >
-              <h3 className="text-xl font-semibold mb-6 text-blue-400">
-                {category.category}
-              </h3>
+              <h3 className="text-xl font-semibold mb-4 text-accent-light">{category.category}</h3>
               <div className="space-y-4">
                 {category.items.map((skill, skillIndex) => (
-                  <motion.div
-                    key={skill.name}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.5, delay: skillIndex * 0.1 }}
-                    viewport={{ once: true }}
-                  >
-                    <div className="flex justify-between mb-1">
-                      <span className="text-neutral-300">{skill.name}</span>
-                      <span className="text-neutral-400">{skill.proficiency}%</span>
+                  <div key={skillIndex}>
+                    <div className="flex justify-between items-center mb-1">
+                      <span className="text-accent-slate">{skill.name}</span>
+                      <span className="text-accent-medium">{skill.proficiency}%</span>
                     </div>
-                    <div className="w-full bg-neutral-800 rounded-full h-2">
+                    <div className="h-2 bg-black/50 rounded-full overflow-hidden">
                       <motion.div
                         initial={{ width: 0 }}
-                        whileInView={{ width: `${skill.proficiency}%` }}
-                        transition={{ duration: 1, delay: skillIndex * 0.1 }}
-                        viewport={{ once: true }}
-                        className="bg-blue-500 h-2 rounded-full"
+                        animate={{ width: `${skill.proficiency}%` }}
+                        transition={{ duration: 1, delay: index * 0.2 + skillIndex * 0.1 }}
+                        className="h-full bg-gradient-to-r from-accent-medium to-accent-light rounded-full"
                       />
                     </div>
-                  </motion.div>
+                  </div>
                 ))}
               </div>
             </motion.div>
