@@ -54,36 +54,52 @@ export default function About() {
           >
             <h2 className="text-2xl font-semibold mb-6">Experience</h2>
             <div className="space-y-8">
-              {[
-                {
-                  year: '2023 - Present',
-                  title: 'Assistant to Regional Manager',
-                  company: 'DMS Property Group',
-                  description: 'Supporting regional operations, managing property documentation, and coordinating with property managers to ensure efficient operations.'
-                },
-                {
-                  year: '2021 - 2023',
-                  title: 'Junior Accountant',
-                  company: 'LJS&Associates Consulting',
-                  description: 'Handled financial records, prepared reports, and assisted with client account management.'
-                }
-              ].map((exp, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.5, delay: 0.6 + index * 0.2 }}
-                  className="relative pl-8 border-l-2 border-neutral-800"
-                >
-                  <div className="absolute -left-[9px] top-0 w-4 h-4 bg-neutral-800 rounded-full" />
-                  <div className="mb-2">
-                    <span className="text-neutral-400">{exp.year}</span>
+              <div>
+                <h3 className="text-xl font-semibold mb-2">Experience</h3>
+                <div className="space-y-6">
+                  <div>
+                    <h4 className="font-medium">Assistant to Regional Manager</h4>
+                    <p className="text-neutral-400">DMS Property Group</p>
+                    <p className="text-sm text-neutral-500">2022 - 2023</p>
+                    <ul className="list-disc list-inside text-neutral-400 mt-2 space-y-1">
+                      <li>Managed property operations and tenant relations</li>
+                      <li>Handled financial reporting and documentation</li>
+                      <li>Coordinated maintenance and property improvements</li>
+                    </ul>
                   </div>
-                  <h3 className="text-xl font-semibold mb-1">{exp.title}</h3>
-                  <p className="text-neutral-400 mb-2">{exp.company}</p>
-                  <p className="text-neutral-300">{exp.description}</p>
-                </motion.div>
-              ))}
+                  <div>
+                    <h4 className="font-medium">Summer Position</h4>
+                    <p className="text-neutral-400">Konstant Manufacturing</p>
+                    <p className="text-sm text-neutral-500">2024</p>
+                    <ul className="list-disc list-inside text-neutral-400 mt-2 space-y-1">
+                      <li>Gained valuable manufacturing industry experience</li>
+                      <li>Contributed to operational efficiency</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="font-medium">Junior Accountant</h4>
+                    <p className="text-neutral-400">LJS&Associates Consulting</p>
+                    <p className="text-sm text-neutral-500">2021 - 2022</p>
+                    <ul className="list-disc list-inside text-neutral-400 mt-2 space-y-1">
+                      <li>Managed client accounts and financial records</li>
+                      <li>Prepared financial statements and reports</li>
+                      <li>Assisted with tax preparation and compliance</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-semibold mb-2">Education</h3>
+                <div>
+                  <h4 className="font-medium">Business Degree</h4>
+                  <p className="text-neutral-400">Conestoga College</p>
+                  <p className="text-sm text-neutral-500">2023 - 2025</p>
+                  <p className="text-neutral-400 mt-2">
+                    Successfully completed Business Administration program while gaining practical experience through work placements.
+                  </p>
+                </div>
+              </div>
             </div>
           </motion.section>
 

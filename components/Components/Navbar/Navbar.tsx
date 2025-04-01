@@ -20,6 +20,9 @@ export default function Navbar() {
     const skillsSection = document.getElementById('skills');
     if (skillsSection) {
       skillsSection.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      // If we're on another page, navigate to home page first
+      window.location.href = '/#skills';
     }
   };
 
