@@ -37,8 +37,8 @@ export default function Home() {
 
       {/* Hero Section */}
       <section className="flex flex-col items-center justify-center text-center h-screen p-8 space-y-6 relative">
-        <div className="absolute top-8 right-8">
-          <Lanyard />
+        <div className="absolute top-8 right-8 z-10">
+          <Lanyard position={[0, 0, 20]} gravity={[0, -40, 0]} />
         </div>
         <motion.h1
           initial={{ opacity: 0, y: -30 }}

@@ -158,7 +158,7 @@ export function Lanyard({
       whileHover={{ scale: 1.1 }}
       transition={{ type: "spring", stiffness: 300, damping: 20 }}
     >
-      <div className="w-32 h-32">
+      <div className="w-64 h-64">
         <Canvas
           camera={{ position: position, fov: fov }}
           gl={{ alpha: transparent }}
