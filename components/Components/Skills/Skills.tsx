@@ -37,7 +37,7 @@ export default function Skills() {
   ];
 
   return (
-    <section id="skills" className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-black via-black/95 to-accent-dark/10">
+    <section id="skills" className="py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -45,8 +45,8 @@ export default function Skills() {
           transition={{ duration: 0.5 }}
           className="text-center mb-12"
         >
-          <h2 className="text-4xl font-bold mb-4 text-accent-lightest">Skills & Expertise</h2>
-          <p className="text-xl text-accent-slate">
+          <h2 className="text-4xl font-bold mb-4 text-white">Skills & Expertise</h2>
+          <p className="text-xl text-white/70">
             Professional capabilities and business software proficiency
           </p>
         </motion.div>
@@ -58,17 +58,20 @@ export default function Skills() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: categoryIndex * 0.2 }}
-              className="bg-black/50 backdrop-blur-sm border border-accent-medium/20 rounded-lg p-6 hover:border-accent-medium/40 transition-all duration-300"
+              className="bg-black/50 backdrop-blur-sm border border-white/10 rounded-lg p-6 hover:border-white/20 transition-all duration-300"
             >
-              <h3 className="text-xl font-semibold mb-6 text-accent-light">{category.category}</h3>
+              <h3 className="text-xl font-semibold mb-6 text-white">{category.category}</h3>
               <div className="space-y-6">
                 {category.items.map((skill, skillIndex) => (
                   <div key={skillIndex} className="space-y-2">
                     <div className="flex justify-between items-center">
-                      <span className="text-accent-slate">{skill.name}</span>
-                      <span className="text-accent-medium">{skill.proficiency}%</span>
+                      <span className="text-white">{skill.name}</span>
+                      <span className="text-white/70">{skill.proficiency}%</span>
                     </div>
-                    <div className="h-2 bg-black/50 rounded-full overflow-hidden">
+                    <div className="relative h-2">
+                      {/* Background bar */}
+                      <div className="absolute inset-0 bg-white/10 rounded-full" />
+                      {/* Animated progress bar */}
                       <motion.div
                         initial={{ width: 0 }}
                         animate={{ width: `${skill.proficiency}%` }}
@@ -77,7 +80,8 @@ export default function Skills() {
                           delay: categoryIndex * 0.2 + skillIndex * 0.1,
                           ease: "easeOut"
                         }}
-                        className="h-full bg-gradient-to-r from-accent-medium to-accent-light rounded-full"
+                        className="absolute inset-0 bg-gradient-to-r from-accent-medium to-accent-light rounded-full"
+                        style={{ width: `${skill.proficiency}%` }}
                       />
                     </div>
                   </div>
