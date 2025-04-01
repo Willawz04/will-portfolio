@@ -19,7 +19,7 @@ export default function About() {
           >
             <h1 className="text-4xl md:text-5xl font-bold mb-4">About Me</h1>
             <p className="text-xl text-neutral-400">
-              A passionate developer focused on creating exceptional digital experiences
+              A dedicated business professional with expertise in accounting and property management
             </p>
           </motion.div>
 
@@ -33,14 +33,14 @@ export default function About() {
             <h2 className="text-2xl font-semibold mb-6">Background</h2>
             <div className="prose prose-invert max-w-none">
               <p className="text-neutral-300 leading-relaxed">
-                I'm a software developer with a passion for creating elegant solutions to complex problems. 
-                My journey in technology began with a fascination for how things work on the internet, 
-                which led me to pursue a career in web development.
+                I'm a business professional with a strong foundation in accounting and property management. 
+                My journey in business began with a focus on financial operations and has evolved to include 
+                comprehensive property management responsibilities.
               </p>
               <p className="text-neutral-300 leading-relaxed mt-4">
-                With experience in both frontend and backend development, I specialize in building 
-                responsive, user-friendly applications that deliver real value. I'm constantly 
-                learning and exploring new technologies to stay at the forefront of web development.
+                With experience in both accounting and property management, I specialize in financial analysis, 
+                client communication, and operational efficiency. I'm committed to delivering exceptional service 
+                and maintaining high standards in all business operations.
               </p>
             </div>
           </motion.section>
@@ -57,21 +57,15 @@ export default function About() {
               {[
                 {
                   year: '2023 - Present',
-                  title: 'Senior Developer',
-                  company: 'Tech Company',
-                  description: 'Leading development of key features and mentoring junior developers.'
+                  title: 'Assistant to Regional Manager',
+                  company: 'DMS Property Group',
+                  description: 'Supporting regional operations, managing property documentation, and coordinating with property managers to ensure efficient operations.'
                 },
                 {
                   year: '2021 - 2023',
-                  title: 'Full Stack Developer',
-                  company: 'Digital Agency',
-                  description: 'Developed and maintained multiple client projects using modern web technologies.'
-                },
-                {
-                  year: '2019 - 2021',
-                  title: 'Junior Developer',
-                  company: 'Startup',
-                  description: 'Started my professional journey in web development.'
+                  title: 'Junior Accountant',
+                  company: 'LJS&Associates Consulting',
+                  description: 'Handled financial records, prepared reports, and assisted with client account management.'
                 }
               ].map((exp, index) => (
                 <motion.div
@@ -102,7 +96,7 @@ export default function About() {
             <h2 className="text-2xl font-semibold mb-6">Education</h2>
             <div className="space-y-4">
               <div className="bg-neutral-900 rounded-lg p-6">
-                <h3 className="text-xl font-semibold mb-2">Computer Science Degree</h3>
+                <h3 className="text-xl font-semibold mb-2">Business Administration</h3>
                 <p className="text-neutral-400">University Name</p>
                 <p className="text-neutral-500">2015 - 2019</p>
               </div>
