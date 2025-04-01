@@ -37,13 +37,12 @@ export default function Skills() {
   ];
 
   return (
-    <section id="skills" className="py-16 px-4 sm:px-6 lg:px-8">
+    <section id="skills" className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-black via-black/95 to-accent-dark/10">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          viewport={{ once: true }}
           className="text-center mb-12"
         >
           <h2 className="text-4xl font-bold mb-4 text-accent-lightest">Skills & Expertise</h2>
@@ -57,35 +56,31 @@ export default function Skills() {
             <motion.div
               key={categoryIndex}
               initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: categoryIndex * 0.1 }}
-              viewport={{ once: true }}
-              className="bg-black/50 backdrop-blur-sm border border-accent-medium/20 rounded-lg p-6 hover:border-accent-medium/40 transition-colors"
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: categoryIndex * 0.2 }}
+              className="bg-black/50 backdrop-blur-sm border border-accent-medium/20 rounded-lg p-6 hover:border-accent-medium/40 transition-all duration-300"
             >
-              <h3 className="text-xl font-semibold mb-4 text-accent-light">{category.category}</h3>
-              <div className="space-y-4">
+              <h3 className="text-xl font-semibold mb-6 text-accent-light">{category.category}</h3>
+              <div className="space-y-6">
                 {category.items.map((skill, skillIndex) => (
-                  <motion.div
-                    key={skillIndex}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.5, delay: skillIndex * 0.1 }}
-                    viewport={{ once: true }}
-                  >
-                    <div className="flex justify-between items-center mb-1">
+                  <div key={skillIndex} className="space-y-2">
+                    <div className="flex justify-between items-center">
                       <span className="text-accent-slate">{skill.name}</span>
                       <span className="text-accent-medium">{skill.proficiency}%</span>
                     </div>
                     <div className="h-2 bg-black/50 rounded-full overflow-hidden">
                       <motion.div
                         initial={{ width: 0 }}
-                        whileInView={{ width: `${skill.proficiency}%` }}
-                        transition={{ duration: 1, delay: skillIndex * 0.1 }}
-                        viewport={{ once: true }}
+                        animate={{ width: `${skill.proficiency}%` }}
+                        transition={{
+                          duration: 1.5,
+                          delay: categoryIndex * 0.2 + skillIndex * 0.1,
+                          ease: "easeOut"
+                        }}
                         className="h-full bg-gradient-to-r from-accent-medium to-accent-light rounded-full"
                       />
                     </div>
-                  </motion.div>
+                  </div>
                 ))}
               </div>
             </motion.div>
