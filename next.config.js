@@ -3,19 +3,35 @@ const nextConfig = {
   webpack: (config) => {
     config.module.rules.push({
       test: /\.(glb|gltf)$/,
-      use: {
-        loader: 'file-loader',
-        options: {
-          publicPath: '/_next/static/',
-          outputPath: 'static/',
-        },
-      },
+      type: 'asset/resource',
+      generator: {
+        filename: 'static/chunks/[path][name][ext]'
+      }
     });
     return config;
   },
   images: {
-    domains: ['localhost'],
-    unoptimized: true,
+    remotePatterns: [
+      {
+        protocol: 'http',
+        hostname: 'localhost',
+        port: '3000',
+        pathname: '/**',
+      },
+    ],
+  },
+  async headers() {
+    return [
+      {
+        source: '/assets/:path*',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+        ],
+      },
+    ];
   },
 };
 
