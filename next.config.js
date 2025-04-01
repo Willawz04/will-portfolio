@@ -6,8 +6,8 @@ const nextConfig = {
       use: {
         loader: 'file-loader',
         options: {
-          publicPath: '/_next/static/',
-          outputPath: 'static/',
+          publicPath: '/assets/',
+          outputPath: 'assets/',
         },
       },
     });
@@ -16,6 +16,7 @@ const nextConfig = {
   images: {
     domains: ['localhost'],
   },
+  assetPrefix: '/assets/',
 };
 
 module.exports = nextConfig; 
