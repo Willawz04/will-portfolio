@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { Lanyard } from '@/components/ui/lanyard';
+import Lanyard from '@/components/ui/lanyard';
 
 export default function Home() {
   const [showBanner, setShowBanner] = useState(true);
@@ -37,8 +37,8 @@ export default function Home() {
 
       {/* Hero Section */}
       <section className="flex flex-col items-center justify-center text-center h-screen p-8 space-y-6 relative">
-        <div className="absolute top-8 right-8 z-10">
-          <Lanyard position={[0, 0, 20]} gravity={[0, -40, 0]} />
+        <div className="absolute top-8 right-8 z-10 w-64 h-64">
+          <Lanyard position={[0, 0, 5]} gravity={[0, -9.81, 0]} />
         </div>
         <motion.h1
           initial={{ opacity: 0, y: -30 }}
