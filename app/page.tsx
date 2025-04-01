@@ -78,7 +78,9 @@ export default function Home() {
       </section>
 
       {/* Skills Section */}
-      <Skills />
+      <section id="skills">
+        <Skills />
+      </section>
 
       {/* My Work Section */}
       <section className="p-8">

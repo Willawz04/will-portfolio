@@ -2,36 +2,8 @@
 
 import { motion } from 'framer-motion';
 import Navbar from '@/components/Components/Navbar/Navbar';
-import { Card, CardContent } from '@/components/ui/card';
 
 export default function Blog() {
-  const blogPosts = [
-    {
-      id: 1,
-      title: 'Building Modern Web Applications with Next.js',
-      excerpt: 'Learn about the benefits of using Next.js for building modern web applications and how it can improve your development workflow.',
-      date: 'March 15, 2024',
-      readTime: '5 min read',
-      category: 'Web Development'
-    },
-    {
-      id: 2,
-      title: 'The Future of Frontend Development',
-      excerpt: 'Exploring the latest trends and technologies shaping the future of frontend development, from AI integration to advanced frameworks.',
-      date: 'March 10, 2024',
-      readTime: '7 min read',
-      category: 'Technology'
-    },
-    {
-      id: 3,
-      title: 'Best Practices for Responsive Design',
-      excerpt: 'A comprehensive guide to creating responsive designs that work seamlessly across all devices and screen sizes.',
-      date: 'March 5, 2024',
-      readTime: '6 min read',
-      category: 'UI/UX'
-    }
-  ];
-
   return (
     <div className="bg-neutral-950 text-neutral-100 min-h-screen font-poppins">
       <Navbar />
@@ -47,67 +19,48 @@ export default function Blog() {
           >
             <h1 className="text-4xl md:text-5xl font-bold mb-4">Blog</h1>
             <p className="text-xl text-neutral-400">
-              Thoughts, tutorials, and insights about web development
+              Insights on Business Strategy and Leadership
             </p>
           </motion.div>
 
-          {/* Blog Posts Grid */}
-          <div className="grid gap-8">
-            {blogPosts.map((post, index) => (
-              <motion.div
-                key={post.id}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-              >
-                <Card className="bg-neutral-900 border border-neutral-800 hover:border-neutral-700 transition-colors">
-                  <CardContent className="p-6">
-                    <div className="flex items-center gap-4 mb-4">
-                      <span className="text-sm text-neutral-400">{post.date}</span>
-                      <span className="text-sm text-neutral-500">•</span>
-                      <span className="text-sm text-neutral-400">{post.readTime}</span>
-                    </div>
-                    <h2 className="text-2xl font-semibold mb-3 hover:text-blue-400 transition-colors">
-                      {post.title}
-                    </h2>
-                    <p className="text-neutral-400 mb-4">{post.excerpt}</p>
-                    <div className="flex items-center justify-between">
-                      <span className="text-sm text-blue-400">{post.category}</span>
-                      <button className="text-sm text-neutral-400 hover:text-white transition-colors">
-                        Read more →
-                      </button>
-                    </div>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-
-          {/* Newsletter Section */}
-          <motion.div
+          {/* Article */}
+          <motion.article
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-            className="mt-16 bg-neutral-900 rounded-lg p-8 border border-neutral-800"
+            transition={{ duration: 0.5 }}
+            className="prose prose-invert max-w-none"
           >
-            <h2 className="text-2xl font-semibold mb-4">Subscribe to the Newsletter</h2>
-            <p className="text-neutral-400 mb-6">
-              Get the latest posts delivered right to your inbox.
-            </p>
-            <form className="flex gap-4">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="flex-1 bg-neutral-800 border border-neutral-700 rounded-lg px-4 py-2 text-white placeholder-neutral-500 focus:outline-none focus:border-blue-500"
-              />
-              <button
-                type="submit"
-                className="bg-blue-500 text-white px-6 py-2 rounded-lg hover:bg-blue-600 transition-colors"
-              >
-                Subscribe
-              </button>
-            </form>
-          </motion.div>
+            <h2 className="text-3xl font-bold mb-6">The Strategic Parallels Between Chess and Business</h2>
+            <div className="text-neutral-300 space-y-6">
+              <p>
+                Business and chess may seem like two unrelated fields, but they have more in common than one may think. 
+                Both require strategic thinking, planning, and decision-making skills. The lessons that can be learned 
+                from playing chess can be applied to business and vice versa. A business leader can make an unlimited 
+                number of moves. The goal of the game chess and business alike is to use your resources, make great 
+                decisions, and successfully outsmart your competition.
+              </p>
+              <p>
+                As a great chess player would, a great business leader must make plans before making any moves and 
+                think many steps ahead in the game. This way, they can manage their resources, and identify their 
+                strengths and weaknesses. Chess players and business leaders are constrained by time and must make 
+                decisions on the spot while remaining calm and focused in high-stress situations.
+              </p>
+              <p>
+                Sometimes sacrifices must be made by the leader or player to move forward. A sacrifice may be viewed 
+                as a loss in the present, but it can prove to gain an advantage in the future. This can be viewed in 
+                business as a form of investment in advanced technology, employee training or market research. 
+                Investments deplete current time and resources but can help realize profits in the future. Similarly, 
+                in chess, a player may sacrifice a piece in order to put their opponent at a disadvantage or to expose 
+                his materials.
+              </p>
+              <p>
+                In both Business and Chess, success is often the result of making the right strategic decisions, 
+                effectively managing your resources, identifying core strengths as well as making sacrifices. Those 
+                who are able to calculate their moves in a strategic manner are more likely to achieve their goals 
+                and succeed in the long run.
+              </p>
+            </div>
+          </motion.article>
         </div>
       </main>
 

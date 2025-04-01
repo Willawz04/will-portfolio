@@ -166,7 +166,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="font-medium">Location</h3>
-                    <p className="text-neutral-400">United States</p>
+                    <p className="text-neutral-400">Brantford, Ontario, Canada</p>
                   </div>
                 </div>
 
