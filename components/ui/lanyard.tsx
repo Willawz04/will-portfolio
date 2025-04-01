@@ -155,11 +155,12 @@ interface LanyardProps {
 
 export default function Lanyard({ position = [0, 0, 30], gravity = [0, -40, 0], fov = 20, transparent = true }: LanyardProps) {
   return (
-    <div className="relative z-0 w-full h-screen flex justify-center items-center transform scale-100 origin-center">
+    <div className="lanyard-wrapper">
       <Canvas
         camera={{ position: position as [number, number, number], fov: fov }}
         gl={{ alpha: transparent }}
         onCreated={({ gl }) => gl.setClearColor(new THREE.Color(0x000000), transparent ? 0 : 1)}
+        style={{ width: '100%', height: '100%' }}
       >
         <ambientLight intensity={Math.PI} />
         <Physics gravity={gravity as [number, number, number]} timeStep={1 / 60}>

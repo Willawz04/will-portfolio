@@ -37,7 +37,7 @@ export default function Home() {
 
       {/* Hero Section */}
       <section className="flex flex-col items-center justify-center text-center h-screen p-8 space-y-6 relative">
-        <div className="absolute top-8 right-8 z-10 w-64 h-64">
+        <div className="absolute top-8 right-8 z-10 w-96 h-96">
           <Lanyard position={[0, 0, 5]} gravity={[0, -9.81, 0]} />
         </div>
         <motion.h1
