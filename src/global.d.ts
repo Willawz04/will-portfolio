@@ -1,16 +1,16 @@
 export { };
 
-declare module '*.glb' {
+declare module "*.glb" {
   const content: string;
   export default content;
 }
 
-declare module '*.png' {
+declare module "*.png" {
   const content: string;
   export default content;
 }
 
-declare module 'meshline' {
+declare module "meshline" {
   export const MeshLineGeometry: any;
   export const MeshLineMaterial: any;
 }

@@ -3,20 +3,23 @@ const nextConfig = {
   webpack: (config) => {
     config.module.rules.push({
       test: /\.(glb|gltf)$/,
-      use: {
-        loader: 'file-loader',
-        options: {
-          publicPath: '/assets/',
-          outputPath: 'assets/',
-        },
-      },
+      type: 'asset/resource',
+      generator: {
+        filename: 'static/chunks/[path][name][ext]'
+      }
     });
     return config;
   },
   images: {
-    domains: ['localhost'],
+    remotePatterns: [
+      {
+        protocol: 'http',
+        hostname: 'localhost',
+        port: '3000',
+        pathname: '/**',
+      },
+    ],
   },
-  assetPrefix: '/assets/',
 };
 
 module.exports = nextConfig; 
