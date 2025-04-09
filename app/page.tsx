@@ -38,10 +38,10 @@ export default function Home() {
       )}
 
       {/* Hero Section */}
-      <section className="flex flex-col items-center justify-center text-center h-screen p-8 space-y-6 relative">
+      <section className="relative min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8">
         <motion.div
           style={{ y }}
-          className="fixed top-0 right-0 w-[800px] h-[800px] pointer-events-auto"
+          className="fixed top-0 right-0 w-[800px] h-[800px] pointer-events-auto hidden md:block"
         >
           <Lanyard position={[0, 0, 12]} gravity={[0, -9.81, 0]} />
         </motion.div>
